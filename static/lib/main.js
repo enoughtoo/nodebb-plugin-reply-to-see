@@ -9,7 +9,7 @@ $('document').ready(function() {
 			return;
 		}
 
-		var item = $('<li><a href="#" data-switch-action="post"><i class="fa fa-fw fa-ticket"></i> 回复后可见帖子内容</a></li>');
+		var item = $('<li><a href="#" data-switch-action="post"><i class="fa fa-fw fa-ticket"></i> Reply and refresh the page to see this content.</a></li>');
 		$('#cmp-uuid-' + data.post_uuid + ' .action-bar .dropdown-menu').append(item);
 
 		item.on('click', function() {
@@ -23,7 +23,7 @@ $('document').ready(function() {
 
 	function callToggleQuestion(tid) {
 		socket.emit('plugins.RtoS.setRtoS', {tid: tid}, function(err, data) {
-			app.alertSuccess('主题设置为回复后可见');
+			app.alertSuccess('Topic is set as reply-to-see.');
 			ajaxify.refresh();
 		});
 	}
